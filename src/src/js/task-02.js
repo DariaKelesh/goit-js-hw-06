@@ -6,3 +6,5 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+
+console.log("hello world");
