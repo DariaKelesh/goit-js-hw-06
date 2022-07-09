@@ -12,7 +12,10 @@ const onBtnDecrementClick = () => {
     // console.log(counterValue -= 1);
     // КАК counterValue вывести в HTML???
     
-    btnDecrement.insertAdjacentHTML("afterend", counterValue -= 1)
+    // btnDecrement.insertAdjacentHTML("afterend", counterValue -= 1)
+    
+
+    counterValue.innerHTML = Number(counterValue -= 1);
     
 };
 
