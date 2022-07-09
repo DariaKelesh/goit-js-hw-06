@@ -6,16 +6,17 @@ const ingredients = [
   'Herbs',
   'Condiments'
 ];
-// const list = document.querySelector("ul#ingredients");
 
 
-// const createLi = (ingrLength) => {
-//     for (let i = 0; i < ingrLength; i += 1) {
-//         const listItem = document.createElement('li');
-//         listItem.textContent = ingredients[i];
-//         listItem.classList.add('item');
-//         list.append(listItem);
-//     }
-// };
 
-// createLi(ingredients.length);
+const list = document.querySelector('ul#ingredients');
+
+const createLi = (ingrLength) => {
+    for (let i = 0; i < ingrLength; i += 1) {
+        const li = document.createElement('li');
+        li.classList.add('item');
+        li.textContent = ingredients[i];
+        list.append(li);
+    }
+}
+createLi(ingredients.length);
