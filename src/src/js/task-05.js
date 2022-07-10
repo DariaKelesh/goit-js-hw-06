@@ -9,8 +9,16 @@ const nameOutput = document.querySelector("span#name-output");
 nameInput.addEventListener("input", (event) => {
 
     nameOutput.textContent = event.currentTarget.value;
-    // if (nameInput.textContent === "") {
-    //     nameOutput.textContent = "Anonymous"
-    // }
+    
+
    
 });
+
+// nameInput.addEventListener("blur", (event) => {
+
+//     if (nameInput.value = "") {
+
+//     nameOutput.textContent = "aNONYMOUS"       
+//     } 
+
+// });
