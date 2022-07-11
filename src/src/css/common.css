@@ -23,14 +23,10 @@ button {
   cursor: pointer;
 }
 
-li {
+.collection-item {
  display: flex;
  justify-content: center;
  align-items: center;
 
  margin-bottom: 20px;
-}
-
-img {
-    width: 320px;
 }
