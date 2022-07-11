@@ -1,34 +1,20 @@
-// let counterValue = document.querySelector("span#value");
-// counterValue = 0;
-
-// const counter = document.querySelector("div#counter")
-
-// const btnDecrement = document.querySelector("button[data-action=decrement]");
-
-// const btnIncrement = document.querySelector("button[data-action=increment]");
-
-// const onBtnDecrementClick = () => {
-//     console.log("Button -1 was clicked");
-//     // console.log(counterValue -= 1);
-//     // КАК counterValue вывести в HTML???
-    
-//     // btnDecrement.insertAdjacentHTML("afterend", counterValue -= 1)
-    
-
-//     counterValue.innerHTML = Number(counterValue -= 1);
-    
-// };
-
-// btnDecrement.addEventListener("click", onBtnDecrementClick);
+const spanValue = document.querySelector("span#value");
+let counterValue = 0;
 
 
-// const onBtnIncrementClick = () => {
-//     console.log("Button +1 was clicked");
-//     // console.log(counterValue += 1);
-//     // КАК counterValue вывести в HTML???
-//     btnDecrement.insertAdjacentHTML("afterend", counterValue += 1)
-// };
+const btnDecrement = document.querySelector("button[data-action=decrement]");
+const btnIncrement = document.querySelector("button[data-action=increment]");
 
-// btnIncrement.addEventListener("click", onBtnIncrementClick);
+btnDecrement.addEventListener("click", handleDecrementClick);
+btnIncrement.addEventListener("click", handleIncrementClick);
 
+function handleDecrementClick(value) {
+    value = counterValue -= 1;
+    spanValue.innerHTML = counterValue;
+}
+
+function handleIncrementClick(value) {
+    value = counterValue += 1;
+    spanValue.innerHTML = counterValue;
+}
 
