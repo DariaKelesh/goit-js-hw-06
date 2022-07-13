@@ -19,59 +19,38 @@
 // }
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
 
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
 const input = document.querySelector("input");
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
 const boxes = document.querySelector("#boxes");
 
-createBtn.addEventListener("click", onCreateBtnClick);
-destroyBtn.addEventListener("click", onDestroyBtnClick);
-
-console.log(input.value);
-
-// function onCreateBtnClick() {
-//  event.preventDefault();
-
-// input.addEventListener("input", (event) => {
-//   amount.textContent = event.currentTarget.value;
-// });
-//     if (amount === "") {
-//         return
-//     }
-// }
-
-// function createBoxes(amount) {
-   
-    // РАБОТАЕТ, НО СДЕЛАТЬ ЦИКЛ!
-//     const box1 = document.createElement("div");
-//     box1.style.width = "30px";
-//     box1.style.height = "30px";
-//     box1.style.backgroundColor = "tomato";
-
-//     boxes.append(box1);
-//     console.log(boxes);
-    
-// }
+createBtn.addEventListener("click", createBoxes);
+destroyBtn.addEventListener("click", destroyBoxes);
 
 
-function onCreateBtnClick(number) {
-    input.addEventListener("input", (event) =>
-    {
-        if (event.currentTarget.value === "") {
-            return
-        }
-        number = event.currentTarget.value
+function createBoxes(amount) {
+    amount = input.value;
+    let createdBoxes = '';
+    let size = 30;
+
+    for (let i = 0; i < amount; i += 1) {
+        const color = getRandomHexColor();
+        createdBoxes += `<div style = "width: ${size + 10*i}px; height: ${size + 10*i}px; background-color: ${color}"></div>`
     }
-        
-    )
-    console.log(number);
-}
-
-function onDestroyBtnClick() {
-
+    boxes.insertAdjacentHTML("beforeend", createdBoxes)
 }
 
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+function destroyBoxes() {
+    boxes.innerHTML = "";
+    input.value = "";
+
 }
+
