@@ -43,5 +43,18 @@ const images = [
 // }
 
 
+const gallery = document.querySelector(".gallery");
 
+images.map((image) => {
+    gallery.insertAdjacentHTML("beforeend", `<li><img src = "${image.url}", alt = "${image.alt}" width = "320"></img></li>`);
+})
 
+const items = document.querySelectorAll("li");
+items.forEach(item => {
+    item.style.display = "flex";
+    item.style.alignItems = "center"
+    item.style.justifyContent = "center";
+    item.style.marginBottom = "20px";
+    item.style.listStyle = "none";
+    // item.style.width = "320px";
+})
