@@ -47,22 +47,33 @@
 // Category: Technologies
 // Elements: 5
 
+// const ulCategories = document.querySelector("ul#categories");
+// console.log("Number of categories:", ulCategories.children.length);
+
+
+// const category = document.querySelectorAll('h2');
+// const arrCategory = [...category];
+
+// const allUl = document.querySelectorAll("ul");
+// const ulElements = [...allUl];
+
+// console.log("Category:", arrCategory[0].outerText);
+// console.log("Elements:",  ulElements[1].children.length);
+
+// console.log("Category:", arrCategory[1].outerText);
+// console.log("Elements:", ulElements[2].children.length);
+
+// console.log("Category:", arrCategory[2].outerText);
+// console.log("Elements:", ulElements[3].children.length);
+
+const items = document.querySelectorAll("li.item");
+
 const ulCategories = document.querySelector("ul#categories");
 console.log("Number of categories:", ulCategories.children.length);
 
-
-const category = document.querySelectorAll('h2');
-const arrCategory = [...category];
-
-const allUl = document.querySelectorAll("ul");
-const ulElements = [...allUl];
-
-console.log("Category:", arrCategory[0].outerText);
-console.log("Elements:",  ulElements[1].children.length);
-
-console.log("Category:", arrCategory[1].outerText);
-console.log("Elements:", ulElements[2].children.length);
-
-console.log("Category:", arrCategory[2].outerText);
-console.log("Elements:", ulElements[3].children.length);
-
+items.forEach(item => {
+    
+    console.log(
+        `Category: ${item.firstElementChild.textContent}
+         Elements: ${item.querySelectorAll("li").length}`);
+})
